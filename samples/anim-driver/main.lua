@@ -46,3 +46,5 @@ anim:setLink ( 2, curve2, prop1, MOAIProp2D.ATTR_Y_LOC )
 anim:setLink ( 3, curve1, prop2, MOAIProp2D.ATTR_X_LOC, true )
 anim:setMode ( MOAITimer.CONTINUE )
 anim:start ()
+
+--not working

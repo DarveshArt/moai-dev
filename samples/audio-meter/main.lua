@@ -101,3 +101,5 @@ onDraw = function ()
 end
 
 layer:setOverlayTable ({ onDraw })
+
+--black and white screen shown nothing else

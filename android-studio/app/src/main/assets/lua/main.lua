@@ -4,37 +4,20 @@
 -- http://getmoai.com
 ----------------------------------------------------------------
 
-local width = MOAIEnvironment.horizontalResolution
-local height = MOAIEnvironment.verticalResolution
+function makeNode ( name )
+    local node = MOAINode.new ()
+    node:setListener ( MOAINode.EVENT_NODE_POST_UPDATE, function () print ( 'update', name ) end )
+    return node
+end
 
-MOAISim.openWindow ( "test", width, height )
+a = makeNode ( 'A' )
+b = makeNode ( 'B' )
+c = makeNode ( 'C' )
+d = makeNode ( 'D' )
+e = makeNode ( 'E' )
 
-viewport = MOAIViewport.new ()
-viewport:setSize ( width, height )
-viewport:setScale ( width, height )
+b:setNodeLink ( a )
+c:setNodeLink ( b )
 
-layer = MOAIPartitionViewLayer.new ()
-layer:setViewport ( viewport )
-layer:pushRenderPass ()
-
-
-
-
-prop = MOAIProp.new ()
-prop:setDeck ( 'moai.png' )
-prop:setPartition ( layer )
-
-
-curve = MOAIAnimCurve.new ()
-curve:reserveKeys ( 2 )
-curve:setKey ( 1, 0, 0 )
-curve:setKey ( 2, 1.5, 360 )
-
-prop:setAttrLink ( MOAIProp2D.ATTR_Z_ROT, curve, MOAIAnimCurve.ATTR_VALUE )
-
-timer = MOAITimer.new ()
-timer:setSpan ( 0, 3000)
-
-curve:setAttrLink ( MOAIAnimCurve.ATTR_TIME, timer, MOAITimer.ATTR_TIME )
-
-timer:start ()
+a:scheduleUpdate ()
+c:forceUpdate ()

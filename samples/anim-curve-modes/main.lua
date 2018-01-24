@@ -56,3 +56,5 @@ curve3:setAttrLink ( MOAIAnimCurve.ATTR_TIME, timer, MOAITimer.ATTR_TIME )
 
 timer:start ()
 timer2:start ()
+
+--not working
