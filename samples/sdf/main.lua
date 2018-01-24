@@ -103,3 +103,5 @@ end
 
 thread = MOAICoroutine.new ()
 thread:run ( main )
+
+--not working

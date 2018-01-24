@@ -66,3 +66,5 @@ gfxQuad:setUVRect ( 0, 0, 1, 1 )
 local prop = MOAIProp.new ()
 prop:setDeck ( gfxQuad )
 prop:setPartition ( layer )
+
+--working
