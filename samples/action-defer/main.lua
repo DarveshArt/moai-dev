@@ -31,3 +31,5 @@ main = function ()
 end
 
 MOAICoroutine.new ():run ( main )
+
+--checked not clear

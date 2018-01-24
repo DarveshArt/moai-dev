@@ -25,3 +25,5 @@ prop:setColor ( 1, 1, 1, 0 )
 prop:setScl ( 2, 2, 1 )
 prop:setPartition ( layer )
 prop:moveRot ( 0, 0, -360, 5 )
+
+--checked
